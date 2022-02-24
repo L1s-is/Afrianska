@@ -69,19 +69,21 @@ body {
   font-family: Gilroy, sans-serif;
   font-size: 18px;
   line-height: 32px;
-  scrollbar-color: rgba(140, 140, 140, 0.1);
+}
+
+html {
+  scrollbar-color: rgba(140, 140, 140, 0.4);
   scrollbar-width: thin;
 }
 
-body::-webkit-scrollbar {
-  width: 1px;
+html::-webkit-scrollbar {
+  width: 0.55vw;
   margin-left: 0;
 }
 
-body::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb {
   margin-left: 0;
-  width: 1px;
-  background-color: rgba(140, 140, 140, 0.1);
+  background-color: rgba(140, 140, 140, 0.4);
 }
 
 .content-wrapper {
@@ -134,6 +136,10 @@ body::-webkit-scrollbar-thumb {
 
 .not-scroll {
   overflow: hidden;
+}
+
+.not-scroll--desktop {
+  padding-right: 0.5vw;
 }
 
 .header {
@@ -580,13 +586,16 @@ body::-webkit-scrollbar-thumb {
   transition: 0.3s ease-in-out;
 }
 
-.footer--main {
-  background-color: #5A98D0;
+.footer {
   padding-right: 96px;
   min-width: 360px;
 }
 
-.footer {
+.footer--main {
+  background-color: #5A98D0;
+}
+
+.footer__box {
   background-color: #316099;
   border-radius: 0px 200px 0px 0px;
   padding-top: 88px;
@@ -676,6 +685,7 @@ body::-webkit-scrollbar-thumb {
   width: 299px;
   margin-right: 100px;
   font-size: 16px;
+  font-style: normal;
   font-weight: 400;
   line-height: 162%;
   letter-spacing: 0.05em;
@@ -790,7 +800,7 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: 0;
 }
 
-.form__box {
+.form-box {
   position: fixed;
   display: flex;
   align-items: center;
@@ -929,6 +939,7 @@ body::-webkit-scrollbar-thumb {
   min-height: 182px;
   border: 1px solid #356EAD;
   margin: 0;
+  resize: none;
 }
 
 .form__btn {
@@ -963,7 +974,7 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-.ad-form__element--error:invalid {
+.form__element--error:invalid {
   -webkit-animation: 1.2s ease-in-out validation-error;
           animation: 1.2s ease-in-out validation-error;
   border: 2px solid red;
@@ -971,10 +982,34 @@ body::-webkit-scrollbar-thumb {
   transition: 0.5s;
 }
 
-.ad-form__element--error:invalid:focus {
+.form__element--error:invalid:focus {
   border: 2px solid red;
   background-color: rgba(255, 0, 0, 0.3);
   transition: 0.5s;
+}
+
+.element-stroke--invalid {
+  border: 2px solid red;
+}
+
+.element-stroke--invalid:hover {
+  border: 2px solid red;
+}
+
+.element-stroke--invalid:focus {
+  border: 2px solid red;
+}
+
+.element-stroke--valid {
+  border: 2px solid green;
+}
+
+.element-stroke--valid:hover {
+  border: 2px solid green;
+}
+
+.element-stroke--valid:focus {
+  border: 2px solid green;
 }
 
 .success,
@@ -1095,11 +1130,11 @@ body::-webkit-scrollbar-thumb {
     gap: 50px;
   }
 
-  .footer--main {
+  .footer {
     padding-right: 60px;
   }
 
-  .footer {
+  .footer__box {
     padding-left: 0;
   }
 
@@ -1223,7 +1258,7 @@ body::-webkit-scrollbar-thumb {
     grid-template-columns: repeat(2, 50%);
   }
 
-  .footer--main {
+  .footer {
     padding-right: 60px;
   }
 
@@ -1319,11 +1354,11 @@ body::-webkit-scrollbar-thumb {
     border-top: 1px solid rgba(255, 255, 255, 0.4);
   }
 
-  .footer--main {
+  .footer {
     padding-right: 20px;
   }
 
-  .footer {
+  .footer__box {
     padding-bottom: 30px;
   }
 
